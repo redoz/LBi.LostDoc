@@ -1,19 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B411734E-B768-422F-BA1C-5B9AEEF97C52}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LBi.LostDoc</RootNamespace>
-    <AssemblyName>LBi.LostDoc</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,8 +11,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile />
     <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
     <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
     <CodeContractsRuntimeThrowOnFailure>False</CodeContractsRuntimeThrowOnFailure>
@@ -72,231 +58,20 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Asset.cs" />
-    <Compile Include="AssetExplorerCache.cs" />
-    <Compile Include="AssetIdentifier.cs" />
-    <Compile Include="AssetServices.cs" />
-    <Compile Include="AssetType.cs" />
-    <Compile Include="Bundle.cs" />
-    <Compile Include="Extensibility\ContractNames.cs" />
-    <Compile Include="Composition\MetadataContractBasedImportDefinition.cs" />
-    <Compile Include="Composition\MetadataContractBuilder.cs" />
-    <Compile Include="Diagnostics\TraceActivity.cs" />
-    <Compile Include="Diagnostics\TraceExtensions.cs" />
-    <Compile Include="Diagnostics\TraceSources.cs" />
-    <Compile Include="Enrichers\AssetVersionResolver.cs" />
-    <Compile Include="Enrichers\AttributeDataEnricher.cs" />
-    <Compile Include="Enrichers\ExternalNamespaceDocEnricher.cs" />
-    <Compile Include="Enrichers\XmlDocEnricher.cs" />
-    <Compile Include="FilterContext.cs" />
-    <Compile Include="FilterState.cs" />
-    <Compile Include="Filters\CompilerGeneratedFilter.cs" />
-    <Compile Include="Filters\ComObjectTypeFilter.cs" />
-    <Compile Include="Filters\DynamicallyInvokableAttributeFilter.cs" />
-    <Compile Include="Filters\EnumMetadataFilter.cs" />
-    <Compile Include="Filters\PrivateImplementationDetailsFilter.cs" />
-    <Compile Include="IAssetExplorer.cs" />
-    <Compile Include="IAssetVisitor.cs" />
-    <Compile Include="IContextBase.cs" />
-    <Compile Include="IFilterContext.cs" />
-    <Compile Include="LostDocFileInfo.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="MemberInfoFilter.cs" />
-    <Compile Include="DocGenerator.cs" />
-    <Compile Include="Filters\LogicalMemberInfoVisibilityFilter.cs" />
-    <Compile Include="Filters\PublicTypeFilter.cs" />
-    <Compile Include="IEnricher.cs" />
-    <Compile Include="IProcessingContext.cs" />
-    <Compile Include="ITypeFilter.cs" />
-    <Compile Include="Filters\SpecialNameMemberInfoFilter.cs" />
-    <Compile Include="Namespaces.cs" />
-    <Compile Include="Naming.cs" />
-    <Compile Include="ProcessingContextExtensions.cs" />
-    <Compile Include="Reflection\IAssemblyLoader.cs" />
-    <Compile Include="Reflection\NamespaceInfo.cs" />
-    <Compile Include="Reflection\ReflectionExplorer.cs" />
-    <Compile Include="Reflection\ReflectionOnlyAssemblyLoader.cs" />
-    <Compile Include="Reflection\ReflectionServices.cs" />
-    <Compile Include="Service References\MsdnContentService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Templating\AssetRegistration.cs" />
-    <Compile Include="Templating\AssetResolvers\IFileResolver.cs" />
-    <Compile Include="Templating\AssetSection.cs" />
-    <Compile Include="Templating\Caching.cs" />
-    <Compile Include="Templating\ConstantXPathVariable.cs" />
-    <Compile Include="Templating\DependencyProvider.cs" />
-    <Compile Include="Templating\ExportTransformAttribute.cs" />
-    <Compile Include="Templating\ExpressionXPathVariable.cs" />
-    <Compile Include="Templating\AssetResolvers\FileResolver.cs" />
-    <Compile Include="Templating\AssetResolvers\MsdnResolver.cs" />
-    <Compile Include="Templating\IDependencyProvider.cs" />
-    <Compile Include="Templating\IndexProvider.cs" />
-    <Compile Include="Templating\IO\DirectoryFileProvider.cs" />
-    <Compile Include="Templating\IO\FileReference.cs" />
-    <Compile Include="Templating\IO\HttpFileProvider.cs" />
-    <Compile Include="Templating\IO\IFileProvider.cs" />
-    <Compile Include="Templating\IO\NullFileProvider.cs" />
-    <Compile Include="Templating\IO\ResourceFileProvider.cs" />
-    <Compile Include="Templating\IO\ScopedFileProvider.cs" />
-    <Compile Include="Templating\IO\StackedFileProvider.cs" />
-    <Compile Include="Templating\IO\StorageResolver.cs" />
-    <Compile Include="Templating\IO\TemporaryFileProvider.cs" />
-    <Compile Include="Templating\IO\VersionedFileProvider.cs" />
-    <Compile Include="Templating\IResourceTransform.cs" />
-    <Compile Include="Templating\IResourceTransformMetadata.cs" />
-    <Compile Include="Templating\ITemplateContext.cs" />
-    <Compile Include="Templating\ITemplateDirective.cs" />
-    <Compile Include="Templating\IIndexProvider.cs" />
-    <Compile Include="Templating\MissingNodeException.cs" />
-    <Compile Include="Templating\OrdinalResolver.cs" />
-    <Compile Include="Templating\ParameterExport.cs" />
-    <Compile Include="Templating\ResourceTransform.cs" />
-    <Compile Include="Templating\IndexDirective.cs" />
-    <Compile Include="Templating\Storage.cs" />
-    <Compile Include="Templating\Template.cs" />
-    <Compile Include="Templating\ProgressArgs.cs" />
-    <Compile Include="Templating\ResourceDirective.cs" />
-    <Compile Include="Templating\ResourceDeployment.cs" />
-    <Compile Include="Templating\SectionRegistration.cs" />
-    <Compile Include="Templating\StylesheetDirective.cs" />
-    <Compile Include="Templating\StylesheetApplication.cs" />
-    <Compile Include="Templating\TemplateContext.cs" />
-    <Compile Include="Templating\TemplateSettings.cs" />
-    <Compile Include="Templating\TemplateException.cs" />
-    <Compile Include="Templating\TemplateInfo.cs" />
-    <Compile Include="Templating\TemplateOutput.cs" />
-    <Compile Include="Templating\TemplateParameterInfo.cs" />
-    <Compile Include="Templating\TemplateResolver.cs" />
-    <Compile Include="Templating\Transformers\ImageScaleTransform.cs" />
-    <Compile Include="Templating\Transformers\ScalingMode.cs" />
-    <Compile Include="Templating\UnitOfWork.cs" />
-    <Compile Include="Templating\UriExtensions.cs" />
-    <Compile Include="Templating\WorkUnitResult.cs" />
-    <Compile Include="Templating\XDomExtensions.cs" />
-    <Compile Include="Templating\XPathVariable.cs" />
-    <Compile Include="Templating\XPath\XPathNavigatorIndex.cs" />
-    <Compile Include="Templating\XPath\CustomXsltContext.cs" />
-    <Compile Include="Templating\ITemplatingContext.cs" />
-    <Compile Include="Templating\TemplateParser.cs" />
-    <Compile Include="Templating\TemplateXsltExtensions.cs" />
-    <Compile Include="Templating\TemplatingContext.cs" />
-    <Compile Include="Templating\IAssetUriResolver.cs" />
-    <Compile Include="ProcessingContext.cs" />
-    <Compile Include="Templating\XPath\XPathServices.cs" />
-    <Compile Include="Templating\XPath\XsltContextAssetGetter.cs" />
-    <Compile Include="Templating\XPath\XsltContextSubstringAfterLastFunction.cs" />
-    <Compile Include="Templating\XPath\XsltContextSubstringBeforeLastFunction.cs" />
-    <Compile Include="Templating\XPath\XsltContextTernaryOperator.cs" />
-    <Compile Include="VersionComponent.cs" />
-    <Compile Include="Templating\XmlFileProviderResolver.cs" />
-    <Compile Include="Templating\XPath\XsltContextAssetIdGetter.cs" />
-    <Compile Include="Templating\XPath\XsltContextAssetVersionGetter.cs" />
-    <Compile Include="Templating\XPath\XsltContextCoalesceFunction.cs" />
-    <Compile Include="Templating\XPath\XsltContextJoinFunction.cs" />
-    <Compile Include="AssetRedirectCollection.cs" />
-    <Compile Include="XmlDocReader.cs" />
-    <Compile Include="Filters\AssetGlobFilter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Enrichers\enrich-doc-comments.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\MsdnContentService\atoms.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\atoms8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\ContentService.wsdl" />
-    <None Include="Service References\MsdnContentService\default.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\default1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\default2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\default3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsdnContentService\LBi.LostDoc.MsdnContentService.getContentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MsdnContentService\LBi.LostDoc.MsdnContentService.getNavigationPathsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MsdnContentService\urn_msdn_com_public_content_syndication_2006_09_common.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MsdnContentService\" />
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MsdnContentService\configuration91.svcinfo" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MsdnContentService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MsdnContentService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Templating\Transformers\Less\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

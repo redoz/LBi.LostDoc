@@ -1,17 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{357E5BA0-0AA0-4C30-B7BB-EEC8EAAA6D17}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LBi.LostDoc.Templates</RootNamespace>
-    <AssemblyName>LBi.LostDoc.Templates</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>net462</TargetFramework>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,85 +29,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Export.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\Assembly.xslt">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Library\Common.xslt" />
-    <EmbeddedResource Include="Library\DocComments.xslt" />
-    <EmbeddedResource Include="Library\GlobalParameter.xslt" />
-    <EmbeddedResource Include="Library\Layout.xslt" />
-    <EmbeddedResource Include="Library\Library.xslt" />
-    <EmbeddedResource Include="Library\Member.xslt" />
-    <EmbeddedResource Include="Library\Namespace.xslt" />
-    <EmbeddedResource Include="Library\Naming.xslt" />
-    <EmbeddedResource Include="Library\Navigation2.xslt" />
-    <EmbeddedResource Include="Library\Overloads.xslt" />
-    <EmbeddedResource Include="Library\Syntax-csharp.xslt" />
-    <EmbeddedResource Include="Library\Syntax.xslt" />
-    <EmbeddedResource Include="Library\template.xml" />
-    <EmbeddedResource Include="Library\Type.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj">
-      <Project>{B411734E-B768-422F-BA1C-5B9AEEF97C52}</Project>
-      <Name>LBi.LostDoc</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\LayoutExtensions.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\less\colors.less" />
-    <EmbeddedResource Include="Library\less\icons.less" />
-    <EmbeddedResource Include="Library\less\layout.less" />
-    <EmbeddedResource Include="Library\less\navigation.less" />
-    <EmbeddedResource Include="Library\less\style.less" />
-    <EmbeddedResource Include="Library\less\syntax.less" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\js\lib\zepto.js" />
-    <EmbeddedResource Include="Library\js\lostdoc.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\js\lostdoc.settings.js" />
-    <EmbeddedResource Include="Library\js\lostdoc.layout.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\images\lostdoc.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\Master.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\EnrichNaming.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Library\_Master.xslt" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>if not exist $(ProjectDir)..\AddInPackages mkdir $(ProjectDir)..\AddInPackages
-$(ProjectDir)..\.nuget\NuGet.exe pack $(ProjectPath) -OutputDirectory $(ProjectDir)..\AddInPackages</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

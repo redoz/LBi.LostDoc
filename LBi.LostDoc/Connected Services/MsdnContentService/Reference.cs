@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LBi.LostDoc.MsdnContentService {
+namespace MsdnContentService {
     
     
     /// <remarks/>
@@ -437,30 +437,36 @@ namespace LBi.LostDoc.MsdnContentService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="urn:msdn-com:public-content-syndication", ConfigurationName="MsdnContentService.ContentServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="urn:msdn-com:public-content-syndication", ConfigurationName="Client.ContentServicePortType")]
     public interface ContentServicePortType {
         
         // CODEGEN: Generating message contract since the operation GetContent is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="urn:msdn-com:public-content-syndication/GetContent", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(LBi.LostDoc.MsdnContentService.mtpsFaultDetailType), Action="urn:msdn-com:public-content-syndication/GetContent", Name="mtpsFaultDetail")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MsdnContentService.mtpsFaultDetailType), Action="urn:msdn-com:public-content-syndication/GetContent", Name="mtpsFaultDetail")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestedDocument[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(primary[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(image[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(common[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(feature[]))]
-        LBi.LostDoc.MsdnContentService.GetContentResponse1 GetContent(LBi.LostDoc.MsdnContentService.GetContentRequest1 request);
+        MsdnContentService.GetContentResponse1 GetContent(MsdnContentService.GetContentRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:msdn-com:public-content-syndication/GetContent", ReplyAction="*")]
+        System.Threading.Tasks.Task<MsdnContentService.GetContentResponse1> GetContentAsync(MsdnContentService.GetContentRequest1 request);
         
         // CODEGEN: Generating message contract since the operation GetNavigationPaths is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="urn:msdn-com:public-content-syndication/GetNavigationPaths", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(LBi.LostDoc.MsdnContentService.mtpsFaultDetailType), Action="urn:msdn-com:public-content-syndication/GetNavigationPaths", Name="mtpsFaultDetail")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MsdnContentService.mtpsFaultDetailType), Action="urn:msdn-com:public-content-syndication/GetNavigationPaths", Name="mtpsFaultDetail")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestedDocument[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(primary[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(image[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(common[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(feature[]))]
-        LBi.LostDoc.MsdnContentService.GetNavigationPathsResponse1 GetNavigationPaths(LBi.LostDoc.MsdnContentService.GetNavigationPathsRequest1 request);
+        MsdnContentService.GetNavigationPathsResponse1 GetNavigationPaths(MsdnContentService.GetNavigationPathsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:msdn-com:public-content-syndication/GetNavigationPaths", ReplyAction="*")]
+        System.Threading.Tasks.Task<MsdnContentService.GetNavigationPathsResponse1> GetNavigationPathsAsync(MsdnContentService.GetNavigationPathsRequest1 request);
     }
     
     /// <remarks/>
@@ -740,15 +746,15 @@ namespace LBi.LostDoc.MsdnContentService {
     public partial class GetContentRequest1 {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="urn:msdn-com:public-content-syndication/2006/09/common")]
-        public LBi.LostDoc.MsdnContentService.appId appId;
+        public MsdnContentService.appId appId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:msdn-com:public-content-syndication", Order=0)]
-        public LBi.LostDoc.MsdnContentService.getContentRequest getContentRequest;
+        public MsdnContentService.getContentRequest getContentRequest;
         
         public GetContentRequest1() {
         }
         
-        public GetContentRequest1(LBi.LostDoc.MsdnContentService.appId appId, LBi.LostDoc.MsdnContentService.getContentRequest getContentRequest) {
+        public GetContentRequest1(MsdnContentService.appId appId, MsdnContentService.getContentRequest getContentRequest) {
             this.appId = appId;
             this.getContentRequest = getContentRequest;
         }
@@ -761,12 +767,12 @@ namespace LBi.LostDoc.MsdnContentService {
     public partial class GetContentResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:msdn-com:public-content-syndication", Order=0)]
-        public LBi.LostDoc.MsdnContentService.getContentResponse getContentResponse;
+        public MsdnContentService.getContentResponse getContentResponse;
         
         public GetContentResponse1() {
         }
         
-        public GetContentResponse1(LBi.LostDoc.MsdnContentService.getContentResponse getContentResponse) {
+        public GetContentResponse1(MsdnContentService.getContentResponse getContentResponse) {
             this.getContentResponse = getContentResponse;
         }
     }
@@ -1038,15 +1044,15 @@ namespace LBi.LostDoc.MsdnContentService {
     public partial class GetNavigationPathsRequest1 {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="urn:msdn-com:public-content-syndication/2006/09/common")]
-        public LBi.LostDoc.MsdnContentService.appId appId;
+        public MsdnContentService.appId appId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:msdn-com:public-content-syndication", Order=0)]
-        public LBi.LostDoc.MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest;
+        public MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest;
         
         public GetNavigationPathsRequest1() {
         }
         
-        public GetNavigationPathsRequest1(LBi.LostDoc.MsdnContentService.appId appId, LBi.LostDoc.MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest) {
+        public GetNavigationPathsRequest1(MsdnContentService.appId appId, MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest) {
             this.appId = appId;
             this.getNavigationPathsRequest = getNavigationPathsRequest;
         }
@@ -1059,23 +1065,23 @@ namespace LBi.LostDoc.MsdnContentService {
     public partial class GetNavigationPathsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:msdn-com:public-content-syndication", Order=0)]
-        public LBi.LostDoc.MsdnContentService.getNavigationPathsResponse getNavigationPathsResponse;
+        public MsdnContentService.getNavigationPathsResponse getNavigationPathsResponse;
         
         public GetNavigationPathsResponse1() {
         }
         
-        public GetNavigationPathsResponse1(LBi.LostDoc.MsdnContentService.getNavigationPathsResponse getNavigationPathsResponse) {
+        public GetNavigationPathsResponse1(MsdnContentService.getNavigationPathsResponse getNavigationPathsResponse) {
             this.getNavigationPathsResponse = getNavigationPathsResponse;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ContentServicePortTypeChannel : LBi.LostDoc.MsdnContentService.ContentServicePortType, System.ServiceModel.IClientChannel {
+    public interface ContentServicePortTypeChannel : MsdnContentService.ContentServicePortType, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ContentServicePortTypeClient : System.ServiceModel.ClientBase<LBi.LostDoc.MsdnContentService.ContentServicePortType>, LBi.LostDoc.MsdnContentService.ContentServicePortType {
+    public partial class ContentServicePortTypeClient : System.ServiceModel.ClientBase<MsdnContentService.ContentServicePortType>, MsdnContentService.ContentServicePortType {
         
         public ContentServicePortTypeClient() {
         }
@@ -1097,29 +1103,53 @@ namespace LBi.LostDoc.MsdnContentService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LBi.LostDoc.MsdnContentService.GetContentResponse1 LBi.LostDoc.MsdnContentService.ContentServicePortType.GetContent(LBi.LostDoc.MsdnContentService.GetContentRequest1 request) {
+        MsdnContentService.GetContentResponse1 MsdnContentService.ContentServicePortType.GetContent(MsdnContentService.GetContentRequest1 request) {
             return base.Channel.GetContent(request);
         }
         
-        public LBi.LostDoc.MsdnContentService.getContentResponse GetContent(LBi.LostDoc.MsdnContentService.appId appId, LBi.LostDoc.MsdnContentService.getContentRequest getContentRequest) {
-            LBi.LostDoc.MsdnContentService.GetContentRequest1 inValue = new LBi.LostDoc.MsdnContentService.GetContentRequest1();
+        public MsdnContentService.getContentResponse GetContent(MsdnContentService.appId appId, MsdnContentService.getContentRequest getContentRequest) {
+            MsdnContentService.GetContentRequest1 inValue = new MsdnContentService.GetContentRequest1();
             inValue.appId = appId;
             inValue.getContentRequest = getContentRequest;
-            LBi.LostDoc.MsdnContentService.GetContentResponse1 retVal = ((LBi.LostDoc.MsdnContentService.ContentServicePortType)(this)).GetContent(inValue);
+            MsdnContentService.GetContentResponse1 retVal = ((MsdnContentService.ContentServicePortType)(this)).GetContent(inValue);
             return retVal.getContentResponse;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        LBi.LostDoc.MsdnContentService.GetNavigationPathsResponse1 LBi.LostDoc.MsdnContentService.ContentServicePortType.GetNavigationPaths(LBi.LostDoc.MsdnContentService.GetNavigationPathsRequest1 request) {
+        System.Threading.Tasks.Task<MsdnContentService.GetContentResponse1> MsdnContentService.ContentServicePortType.GetContentAsync(MsdnContentService.GetContentRequest1 request) {
+            return base.Channel.GetContentAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MsdnContentService.GetContentResponse1> GetContentAsync(MsdnContentService.appId appId, MsdnContentService.getContentRequest getContentRequest) {
+            MsdnContentService.GetContentRequest1 inValue = new MsdnContentService.GetContentRequest1();
+            inValue.appId = appId;
+            inValue.getContentRequest = getContentRequest;
+            return ((MsdnContentService.ContentServicePortType)(this)).GetContentAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        MsdnContentService.GetNavigationPathsResponse1 MsdnContentService.ContentServicePortType.GetNavigationPaths(MsdnContentService.GetNavigationPathsRequest1 request) {
             return base.Channel.GetNavigationPaths(request);
         }
         
-        public LBi.LostDoc.MsdnContentService.getNavigationPathsResponse GetNavigationPaths(LBi.LostDoc.MsdnContentService.appId appId, LBi.LostDoc.MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest) {
-            LBi.LostDoc.MsdnContentService.GetNavigationPathsRequest1 inValue = new LBi.LostDoc.MsdnContentService.GetNavigationPathsRequest1();
+        public MsdnContentService.getNavigationPathsResponse GetNavigationPaths(MsdnContentService.appId appId, MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest) {
+            MsdnContentService.GetNavigationPathsRequest1 inValue = new MsdnContentService.GetNavigationPathsRequest1();
             inValue.appId = appId;
             inValue.getNavigationPathsRequest = getNavigationPathsRequest;
-            LBi.LostDoc.MsdnContentService.GetNavigationPathsResponse1 retVal = ((LBi.LostDoc.MsdnContentService.ContentServicePortType)(this)).GetNavigationPaths(inValue);
+            MsdnContentService.GetNavigationPathsResponse1 retVal = ((MsdnContentService.ContentServicePortType)(this)).GetNavigationPaths(inValue);
             return retVal.getNavigationPathsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MsdnContentService.GetNavigationPathsResponse1> MsdnContentService.ContentServicePortType.GetNavigationPathsAsync(MsdnContentService.GetNavigationPathsRequest1 request) {
+            return base.Channel.GetNavigationPathsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MsdnContentService.GetNavigationPathsResponse1> GetNavigationPathsAsync(MsdnContentService.appId appId, MsdnContentService.getNavigationPathsRequest getNavigationPathsRequest) {
+            MsdnContentService.GetNavigationPathsRequest1 inValue = new MsdnContentService.GetNavigationPathsRequest1();
+            inValue.appId = appId;
+            inValue.getNavigationPathsRequest = getNavigationPathsRequest;
+            return ((MsdnContentService.ContentServicePortType)(this)).GetNavigationPathsAsync(inValue);
         }
     }
 }

@@ -1,24 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ABDE3820-BCFF-4394-AC42-8A1305FB668F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LBi.LostDoc.Test</RootNamespace>
-    <AssemblyName>LBi.LostDoc.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AlternateReferenceLocation>
-    </AlternateReferenceLocation>
+    <TargetFramework>net462</TargetFramework>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,33 +31,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="xunit, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.extensions, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\xunit.extensions.1.9.2\lib\net20\xunit.extensions.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj" />
+    <ProjectReference Include="..\Company.Project.Library\Company.Project.Library.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssetIdentifierTests.cs" />
-    <Compile Include="MsdnResolverTest.cs" />
-    <Compile Include="NamingTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reflection\ReflectionExplorerTests.cs" />
-    <Compile Include="Templating\OrdinalResolverTest.cs" />
-    <Compile Include="Templating\TemplateTests.cs" />
-    <Compile Include="Templating\XPathNavigatorIndexTests.cs" />
-    <Compile Include="UriTests.cs" />
+    <PackageReference Include="xunit" Version="1.9.2" />
+    <PackageReference Include="xunit.extensions" Version="1.9.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -75,77 +50,4 @@
     <None Include="Data\Company.Project.Library.dll_1.0.0.0.ldoc" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj">
-      <Project>{927BD07E-35D1-4C12-AAAA-BE5216627FBD}</Project>
-      <Name>Company.Project.AnotherLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Company.Project.Library\Company.Project.Library.csproj">
-      <Project>{B36E13C7-AD0C-4AC8-B687-88F08A4932C4}</Project>
-      <Name>Company.Project.Library</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\template.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\Echo.xslt" />
-    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\IncludeEcho.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\EnrichInputDocument\Enrich.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\EnrichInputDocument\template.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\EnrichInputDocument\Copy.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\AlternateGeneratedInput\Copy.xslt" />
-    <EmbeddedResource Include="Templating\AlternateGeneratedInput\template.xml" />
-    <EmbeddedResource Include="Templating\AlternateStaticInput\Static.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\AlternateStaticInput\Copy.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\AlternateStaticInput\template.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\Echo.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\IncludeIndex.xslt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\template.xml" />
-  </ItemGroup>
-  <!--  manual edit, the build server needs to reference a dll rather than a project -->
-  <Choose>
-    <When Condition=" '$(AlternateReferenceLocation)' != '' ">
-      <ItemGroup>
-        <Reference Include="LBi.LostDoc">
-          <HintPath>$(AlternateReferenceLocation)\LBi.LostDoc.dll</HintPath>
-        </Reference>
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-        <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj">
-          <Project>{B411734E-B768-422F-BA1C-5B9AEEF97C52}</Project>
-          <Name>LBi.LostDoc</Name>
-        </ProjectReference>
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

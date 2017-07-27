@@ -17,7 +17,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.ServiceModel;
-using LBi.LostDoc.MsdnContentService;
+using MsdnContentService;
 
 namespace LBi.LostDoc.Templating.AssetResolvers
 {
