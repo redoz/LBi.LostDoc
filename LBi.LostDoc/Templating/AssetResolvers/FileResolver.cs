@@ -33,8 +33,8 @@ namespace LBi.LostDoc.Templating.AssetResolvers
 
         public FileResolver(bool caseSensitiveFs)
         {
-            _lookupCache = new Dictionary<string, Dictionary<Version, Uri>>();
-            _comparer = caseSensitiveFs ? StringComparer.Ordinal : StringComparer.OrdinalIgnoreCase;
+            this._lookupCache = new Dictionary<string, Dictionary<Version, Uri>>();
+            this._comparer = caseSensitiveFs ? StringComparer.Ordinal : StringComparer.OrdinalIgnoreCase;
         }
 
         #region IAssetUriResolver Members

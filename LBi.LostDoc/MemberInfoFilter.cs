@@ -29,7 +29,7 @@ namespace LBi.LostDoc
         {
             MemberInfo mi = asset.Target as MemberInfo;
             if (mi != null)
-                return Filter(context, mi);
+                return this.Filter(context, mi);
 
             return false;
         }

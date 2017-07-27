@@ -63,15 +63,9 @@ namespace LBi.LostDoc.Templating
             return ret;
         }
 
-        bool IXsltContextVariable.IsLocal
-        {
-            get { return true; }
-        }
+        bool IXsltContextVariable.IsLocal => true;
 
-        bool IXsltContextVariable.IsParam
-        {
-            get { return false; }
-        }
+        bool IXsltContextVariable.IsParam => false;
 
         XPathResultType IXsltContextVariable.VariableType
         {

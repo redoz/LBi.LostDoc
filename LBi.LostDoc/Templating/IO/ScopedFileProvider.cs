@@ -44,10 +44,7 @@ namespace LBi.LostDoc.Templating.IO
             return this.FileProvider.OpenFile(Path.Combine(this.BasePath, path), mode);
         }
 
-        public bool SupportsDiscovery
-        {
-            get { return this.FileProvider.SupportsDiscovery; }
-        }
+        public bool SupportsDiscovery => this.FileProvider.SupportsDiscovery;
 
         public IEnumerable<string> GetDirectories(string path)
         {

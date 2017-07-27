@@ -33,24 +33,12 @@ namespace LBi.LostDoc.Templating.XPath
             return new AssetIdentifier(XPathServices.ResultToString(args[0]), XPathServices.ResultToString(args[1])).ToString();
         }
 
-        public int Minargs
-        {
-            get { return 2; }
-        }
+        public int Minargs => 2;
 
-        public int Maxargs
-        {
-            get { return 2; }
-        }
+        public int Maxargs => 2;
 
-        public XPathResultType ReturnType
-        {
-            get { return XPathResultType.String; }
-        }
+        public XPathResultType ReturnType => XPathResultType.String;
 
-        public XPathResultType[] ArgTypes
-        {
-            get { return _ArgTypes; }
-        }
+        public XPathResultType[] ArgTypes => _ArgTypes;
     }
 }

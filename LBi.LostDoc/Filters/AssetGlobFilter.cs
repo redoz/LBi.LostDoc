@@ -26,7 +26,7 @@ namespace LBi.LostDoc.Filters
 
         public string Include
         {
-            get { return this._filter; }
+            get => this._filter;
             set
             {
                 this._filter = value;

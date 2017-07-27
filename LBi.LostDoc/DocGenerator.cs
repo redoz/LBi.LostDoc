@@ -51,15 +51,9 @@ namespace LBi.LostDoc
             this._container = container;
         }
 
-        public List<IAssetFilter> AssetFilters
-        {
-            get { return this._filters; }
-        }
+        public List<IAssetFilter> AssetFilters => this._filters;
 
-        public List<IEnricher> Enrichers
-        {
-            get { return this._enrichers; }
-        }
+        public List<IEnricher> Enrichers => this._enrichers;
 
         #region IDisposable Members
 

@@ -148,7 +148,7 @@ namespace LBi.LostDoc.Reflection
 
             foreach (Assembly child in children)
             {
-                GetAssemblyChain(child, ret);
+                this.GetAssemblyChain(child, ret);
             }
         }
 

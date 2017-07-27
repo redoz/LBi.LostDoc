@@ -40,25 +40,13 @@ namespace LBi.LostDoc.Templating.XPath
             return aid.Version.ToString();
         }
 
-        public int Minargs
-        {
-            get { return 1; }
-        }
+        public int Minargs => 1;
 
-        public int Maxargs
-        {
-            get { return 1; }
-        }
+        public int Maxargs => 1;
 
-        public XPathResultType ReturnType
-        {
-            get { return XPathResultType.String; }
-        }
+        public XPathResultType ReturnType => XPathResultType.String;
 
-        public XPathResultType[] ArgTypes
-        {
-            get { return new[] {XPathResultType.String}; }
-        }
+        public XPathResultType[] ArgTypes => new[] {XPathResultType.String};
 
         #endregion
     }

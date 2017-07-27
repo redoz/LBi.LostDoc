@@ -32,14 +32,14 @@ namespace LBi.LostDoc.Templating.AssetResolvers
 
         public MsdnResolver()
         {
-            _msdnBinding = new BasicHttpBinding(BasicHttpSecurityMode.None);
-            _msdnEndpoint = new EndpointAddress("http://services.msdn.microsoft.com/ContentServices/ContentService.asmx");
+            this._msdnBinding = new BasicHttpBinding(BasicHttpSecurityMode.None);
+            this._msdnEndpoint = new EndpointAddress("http://services.msdn.microsoft.com/ContentServices/ContentService.asmx");
         }
 
         public string Locale
         {
-            get { return this._locale; }
-            set { this._locale = value; }
+            get => this._locale;
+            set => this._locale = value;
         }
 
         #region IAssetUriResolver Members
@@ -67,7 +67,7 @@ namespace LBi.LostDoc.Templating.AssetResolvers
             int retries = 3;
             do
             {
-                ContentServicePortTypeClient client = new ContentServicePortTypeClient(_msdnBinding, _msdnEndpoint);
+                ContentServicePortTypeClient client = new ContentServicePortTypeClient(this._msdnBinding, this._msdnEndpoint);
                 try
                 {
                     getContentResponse msdnResponse = client.GetContent(new appId { value = "LostDoc" }, msdnRequest);

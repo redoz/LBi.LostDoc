@@ -72,30 +72,15 @@ namespace LBi.LostDoc
             }
         }
 
-        public AssetType Type
-        {
-            get { return this._type; }
-        }
+        public AssetType Type => this._type;
 
-        public string AssetId
-        {
-            get { return this._assetId; }
-        }
+        public string AssetId => this._assetId;
 
-        public string TypeMarker
-        {
-            get { return this._assetId.Substring(0, this._assetId.IndexOf(':')); }
-        }
+        public string TypeMarker => this._assetId.Substring(0, this._assetId.IndexOf(':'));
 
-        public Version Version
-        {
-            get { return this._version; }
-        }
+        public Version Version => this._version;
 
-        public bool HasVersion
-        {
-            get { return this._version != null; }
-        }
+        public bool HasVersion => this._version != null;
 
         #region IEquatable<AssetIdentifier> Members
 

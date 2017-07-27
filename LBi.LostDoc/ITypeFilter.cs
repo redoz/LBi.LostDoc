@@ -26,7 +26,7 @@ namespace LBi.LostDoc
         {
             Type t = asset.Target as Type;
             if (t != null)
-                return Filter(context, t);
+                return this.Filter(context, t);
 
             return false;
         }

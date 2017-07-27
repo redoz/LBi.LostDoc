@@ -34,7 +34,7 @@ namespace LBi.LostDoc
         {
             this._doc = XDocument.Load(reader, LoadOptions.SetLineInfo | LoadOptions.PreserveWhitespace);
             this._members = new Dictionary<string, XElement>(StringComparer.Ordinal);
-            foreach (XElement member in _doc.Element("doc").Element("members").Elements("member"))
+            foreach (XElement member in this._doc.Element("doc").Element("members").Elements("member"))
             {
                 try
                 {

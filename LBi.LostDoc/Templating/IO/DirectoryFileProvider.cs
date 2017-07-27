@@ -53,10 +53,7 @@ namespace LBi.LostDoc.Templating.IO
             return File.Open(path, mode, access, share);
         }
 
-        public bool SupportsDiscovery
-        {
-            get { return true; }
-        }
+        public bool SupportsDiscovery => true;
 
         public IEnumerable<string> GetDirectories(string path)
         {

@@ -55,9 +55,6 @@ namespace LBi.LostDoc.Templating.Transforms.Less
             return this._fileProvider.FileExists(fileName);
         }
 
-        public bool UseCacheDependencies
-        {
-            get { return false; }
-        }
+        public bool UseCacheDependencies => false;
     }
 }

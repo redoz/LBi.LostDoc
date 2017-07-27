@@ -37,7 +37,7 @@ namespace LBi.LostDoc
             this._filters = filters.ToArray();
             this.Element = element;
             this._references = references;
-            AssetExplorer = assetExplorer;
+            this.AssetExplorer = assetExplorer;
             this.Catalog = catalog;
             this.Phase = phase;
             this.Cache = cache;
@@ -56,10 +56,7 @@ namespace LBi.LostDoc
 
         public XElement Element { get; private set; }
 
-        public IEnumerable<Asset> References
-        {
-            get { return this._references; }
-        }
+        public IEnumerable<Asset> References => this._references;
 
         public bool AddReference(Asset asset)
         {

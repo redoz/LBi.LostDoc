@@ -44,7 +44,7 @@ namespace LBi.LostDoc.Templating
 
         private AssetIdentifier Parse(string str)
         {
-            return _aidCache.GetOrAdd(str, AssetIdentifier.Parse);
+            return this._aidCache.GetOrAdd(str, AssetIdentifier.Parse);
         }
 
         private string ResolveAssetIdentifier(AssetIdentifier aid)

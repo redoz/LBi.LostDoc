@@ -38,17 +38,17 @@ namespace LBi.LostDoc.Enrichers
 
         public void EnrichType(IProcessingContext context, Type type)
         {
-            GenerateAttributeElements(context, type.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, type.GetCustomAttributesData());
         }
 
         public void EnrichConstructor(IProcessingContext context, ConstructorInfo ctor)
         {
-            GenerateAttributeElements(context, ctor.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, ctor.GetCustomAttributesData());
         }
 
         public void EnrichAssembly(IProcessingContext context, Assembly asm)
         {
-            GenerateAttributeElements(context, asm.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, asm.GetCustomAttributesData());
         }
 
         public void RegisterNamespace(IProcessingContext context)
@@ -57,32 +57,32 @@ namespace LBi.LostDoc.Enrichers
 
         public void EnrichMethod(IProcessingContext context, MethodInfo mInfo)
         {
-            GenerateAttributeElements(context, mInfo.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, mInfo.GetCustomAttributesData());
         }
 
         public void EnrichField(IProcessingContext context, FieldInfo fieldInfo)
         {
-            GenerateAttributeElements(context, fieldInfo.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, fieldInfo.GetCustomAttributesData());
         }
 
         public void EnrichProperty(IProcessingContext context, PropertyInfo propertyInfo)
         {
-            GenerateAttributeElements(context, propertyInfo.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, propertyInfo.GetCustomAttributesData());
         }
 
         public void EnrichReturnValue(IProcessingContext context, MethodInfo methodInfo)
         {
-            GenerateAttributeElements(context, CustomAttributeData.GetCustomAttributes(methodInfo.ReturnParameter));
+            this.GenerateAttributeElements(context, CustomAttributeData.GetCustomAttributes(methodInfo.ReturnParameter));
         }
 
         public void EnrichParameter(IProcessingContext context, ParameterInfo item)
         {
-            GenerateAttributeElements(context, item.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, item.GetCustomAttributesData());
         }
 
         public void EnrichTypeParameter(IProcessingContext context, Type typeParameter)
         {
-            GenerateAttributeElements(context, typeParameter.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, typeParameter.GetCustomAttributesData());
         }
 
         // namespaces don't have attributes
@@ -92,7 +92,7 @@ namespace LBi.LostDoc.Enrichers
 
         public void EnrichEvent(IProcessingContext context, EventInfo eventInfo)
         {
-            GenerateAttributeElements(context, eventInfo.GetCustomAttributesData());
+            this.GenerateAttributeElements(context, eventInfo.GetCustomAttributesData());
         }
 
         #endregion

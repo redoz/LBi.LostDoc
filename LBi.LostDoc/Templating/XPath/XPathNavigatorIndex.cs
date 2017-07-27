@@ -67,10 +67,7 @@ namespace LBi.LostDoc.Templating.XPath
                 }
             }
 
-            public override int CurrentPosition
-            {
-                get { return this._position + 1; }
-            }
+            public override int CurrentPosition => this._position + 1;
         }
 
         private readonly Dictionary<string, List<XPathNavigator>> _index;

@@ -54,10 +54,7 @@ namespace LBi.LostDoc
 
         public AssemblyInfo PrimaryAssembly { get { return this._assemblies.Single(a => a.Phase == 0); } }
 
-        public IEnumerable<AssemblyInfo> Assemblies
-        {
-            get { return this._assemblies; }
-        }
+        public IEnumerable<AssemblyInfo> Assemblies => this._assemblies;
 
         IEnumerator IEnumerable.GetEnumerator()
         {

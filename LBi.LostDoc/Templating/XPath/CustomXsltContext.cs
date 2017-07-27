@@ -56,10 +56,7 @@ namespace LBi.LostDoc.Templating.XPath
             this.Variables = new Stack<XPathVariableList>();
         }
 
-        public override bool Whitespace
-        {
-            get { return false; }
-        }
+        public override bool Whitespace => false;
 
         public override string LookupNamespace(string prefix)
         {

@@ -72,10 +72,7 @@ namespace LBi.LostDoc.Templating.IO
             return ret;
         }
 
-        public bool SupportsDiscovery
-        {
-            get { return true; }
-        }
+        public bool SupportsDiscovery => true;
 
         public IEnumerable<string> GetDirectories(string path)
         {

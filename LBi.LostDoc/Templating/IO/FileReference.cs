@@ -30,7 +30,7 @@ namespace LBi.LostDoc.Templating.IO
 
         public IFileProvider FileProvider { get; protected set; }
 
-        public bool Exists { get { return this.FileProvider.FileExists(this.Path); } }
+        public bool Exists => this.FileProvider.FileExists(this.Path);
 
         public virtual Stream GetStream(FileMode fileMode = FileMode.Open)
         {
