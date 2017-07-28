@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 
 namespace LBi.LostDoc.Templating
@@ -29,7 +28,7 @@ namespace LBi.LostDoc.Templating
 
         public OrdinalResolver(Lazy<T> fallback)
         {
-            Contract.Requires<ArgumentNullException>(fallback != null);
+            if (fallback == null) throw new ArgumentNullException(nameof(fallback));
 
             this._fallback = fallback;
             this._redirects = new int[0];
@@ -38,8 +37,8 @@ namespace LBi.LostDoc.Templating
 
         public void Add(int ordinal, Lazy<T> value)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(ordinal >= 0, "ordinal cannot be negative.");
-            Contract.Requires<ArgumentNullException>(value != null);
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal), "ordinal cannot be negative.");
+            if (value == null) throw new ArgumentNullException(nameof(value));
 
             int lastOrdinal;
             if (this._redirects.Length == 0)
@@ -49,6 +48,7 @@ namespace LBi.LostDoc.Templating
 
             if (ordinal <= lastOrdinal)
                 throw new ArgumentOutOfRangeException("ordinal", "Ordinals can only be added in order.");
+
 
             Array.Resize(ref this._redirects, ordinal + 1);
 
@@ -64,9 +64,8 @@ namespace LBi.LostDoc.Templating
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int ResolveOrdinal(int ordinal)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(ordinal >= 0);
-            Contract.Ensures(Contract.Result<int>() >= -1 && Contract.Result<int>() < ordinal);
-
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal));
+       
             if (ordinal == 0 || this._redirects.Length == 0)
                 return -1;
 
@@ -79,7 +78,7 @@ namespace LBi.LostDoc.Templating
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsFinal(int ordinal)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(ordinal >= 0);
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal));
 
             if (this._redirects.Length == 0)
                 return true;
@@ -90,8 +89,7 @@ namespace LBi.LostDoc.Templating
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Lazy<T> Resolve(int ordinal)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(ordinal >= 0);
-            Contract.Ensures(Contract.Result<Lazy<T>>() != null);
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal));
 
             int realOrdinal = this.ResolveOrdinal(ordinal);
             if (realOrdinal == -1)

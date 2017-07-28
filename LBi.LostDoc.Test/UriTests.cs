@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LBi.LostDoc.Templating;
 using Xunit;
-using Xunit.Extensions;
 
 namespace LBi.LostDoc.Test
 {

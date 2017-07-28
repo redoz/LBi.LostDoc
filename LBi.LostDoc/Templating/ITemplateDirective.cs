@@ -14,41 +14,14 @@
  * limitations under the License. 
  */
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 
 namespace LBi.LostDoc.Templating
 {
-    [ContractClass(typeof(ITemplateDirectiveContract))]
     public interface ITemplateDirective
     {
         int Ordinal { get; }
         IEnumerable<UnitOfWork> DiscoverWork(ITemplateContext context);
     }
 
-    // ReSharper disable InconsistentNaming
-    [ContractClassFor(typeof(ITemplateDirective))]
-    internal class ITemplateDirectiveContract : ITemplateDirective
-    {
-        public int Ordinal {
-            get
-            {
-                Contract.Ensures(Contract.Result<int>() >= 0);
-                return default(int);
-            }
-        }
-
-        public IEnumerable<UnitOfWork> DiscoverWork(ITemplateContext context)
-        {
-            Contract.Requires<ArgumentNullException>(context != null);
-            Contract.Ensures(Contract.Result<IEnumerable<UnitOfWork>>() != null);
-            // this causes the function to be evaluated twice, change interface to return arary?
-            //Contract.Ensures(Contract.ForAll<UnitOfWork>(Contract.Result<IEnumerable<UnitOfWork>>(), t => t != null));
-            
-
-            return default(IEnumerable<UnitOfWork>);
-        }
-    }
-    // ReSharper restore InconsistentNaming
 }

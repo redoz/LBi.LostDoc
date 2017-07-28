@@ -17,7 +17,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Runtime.Caching;
@@ -44,13 +43,22 @@ namespace LBi.LostDoc.Templating
                                      IEnumerable<AssetSection> sections)
             : base(output, ordinal)
         {
-            Contract.Requires<ArgumentNullException>(stylesheet != null);
-            Contract.Requires<ArgumentNullException>(input != null);
-            Contract.Requires<ArgumentNullException>(input.IsAbsoluteUri, "Input Uri must be absolute.");
-            Contract.Requires<ArgumentNullException>(inputNode != null);
-            Contract.Requires<ArgumentNullException>(xsltParams != null);
-            Contract.Requires<ArgumentNullException>(assetIdentifiers != null);
-            Contract.Requires<ArgumentNullException>(sections != null);
+            if (stylesheet == null)
+                throw new ArgumentNullException(nameof(stylesheet));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+            if (!input.IsAbsoluteUri)
+                throw new ArgumentException(nameof(input), "Input Uri must be absolute.");
+            if (output == null)
+                throw new ArgumentNullException(nameof(output));
+            if (inputNode == null)
+                throw new ArgumentNullException(nameof(inputNode));
+            if (xsltParams == null)
+                throw new ArgumentNullException(nameof(xsltParams));
+            if (assetIdentifiers == null)
+                throw new ArgumentNullException(nameof(assetIdentifiers));
+            if (sections == null)
+                throw new ArgumentNullException(nameof(sections));
 
             this.Stylesheet = stylesheet;
             this.InputNode = inputNode;
@@ -77,6 +85,10 @@ namespace LBi.LostDoc.Templating
 
         public override void Execute(ITemplatingContext context, Stream outputStream)
         {
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (outputStream == null) throw new ArgumentNullException(nameof(outputStream));
+            if (!outputStream.CanWrite) throw new ArgumentException("Output stream must be writable.", nameof(outputStream));
+
             // register xslt params
             XsltArgumentList argList = new XsltArgumentList();
             foreach (KeyValuePair<string, object> kvp in this.XsltParams)

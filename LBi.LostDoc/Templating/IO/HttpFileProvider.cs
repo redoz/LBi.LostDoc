@@ -57,8 +57,7 @@ namespace LBi.LostDoc.Templating.IO
                 Stopwatch timer = new Stopwatch();
                 if (!task.Wait(30000))
                 {
-                    throw new TimeoutException(string.Format("Waited for {0:N1}s, no response received from: {1}",
-                                                             timer.Elapsed.TotalSeconds, uri));
+                    throw new TimeoutException($"Waited for {timer.Elapsed.TotalSeconds:N1}s, no response received from: {uri}");
                 }
                 return task.Result;
             }

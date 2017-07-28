@@ -88,7 +88,7 @@ namespace LBi.LostDoc.Enrichers
 
         public void EnrichNamespace(IProcessingContext context, string ns)
         {
-            XElement element = this._doc.XPathSelectElement(string.Format("/doc/namespace[@name = '{0}']", ns));
+            XElement element = this._doc.XPathSelectElement($"/doc/namespace[@name = '{ns}']");
             if (element != null)
             {
                 element = this.EnrichXml(context, element);

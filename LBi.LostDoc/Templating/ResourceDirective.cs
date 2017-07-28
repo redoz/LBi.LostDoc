@@ -54,6 +54,9 @@ namespace LBi.LostDoc.Templating
 
         public IEnumerable<UnitOfWork> DiscoverWork(ITemplateContext context)
         {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context), "context cannot be null."); 
+              
             context.XsltContext.PushVariableScope(context.Document.Root, this.Variables);
 
             if (context.Document.Root.EvaluateCondition(this.ConditionExpression, context.XsltContext))

@@ -15,10 +15,8 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Xml.Linq;

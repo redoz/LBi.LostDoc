@@ -14,7 +14,6 @@
  * limitations under the License. 
  */
 
-using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Diagnostics;
 using System.Runtime.Caching;

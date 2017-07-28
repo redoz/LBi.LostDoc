@@ -14,8 +14,6 @@
  * limitations under the License. 
  */
 
-using System.Collections;
-using System.Linq;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 

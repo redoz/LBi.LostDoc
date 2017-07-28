@@ -16,7 +16,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
@@ -76,7 +75,7 @@ namespace LBi.LostDoc
 
             XElement elem = this.GetMemberElement(sig);
             if (elem != null)
-                return elem.XPathSelectElement(string.Format("param[@name='{0}']", parameter.Name));
+                return elem.XPathSelectElement($"param[@name='{parameter.Name}']");
             return null;
         }
 
@@ -102,7 +101,7 @@ namespace LBi.LostDoc
 
             XElement elem = this.GetMemberElement(sig);
             if (elem != null)
-                return elem.XPathSelectElement(string.Format("typeparam[@name='{0}']", typeParameter.Name));
+                return elem.XPathSelectElement($"typeparam[@name='{typeParameter.Name}']");
             return null;
         }
 
@@ -112,7 +111,7 @@ namespace LBi.LostDoc
 
             XElement elem = this.GetMemberElement(sig);
             if (elem != null)
-                return elem.XPathSelectElement(string.Format("typeparam[@name='{0}']", typeParameter.Name));
+                return elem.XPathSelectElement($"typeparam[@name='{typeParameter.Name}']");
             return null;
         }
 

@@ -80,6 +80,19 @@ namespace LBi.LostDoc.Templating
                         string selectExpression,
                         XsltContext xsltContext = null)
         {
+            if (name == null)
+                throw new ArgumentNullException(nameof(name), "name cannot be null.");
+            if (ordinal < 0)
+                throw new ArgumentOutOfRangeException(nameof(ordinal), "ordinal cannot be negative.");
+            if (inputUri == null)
+                throw new ArgumentNullException(nameof(inputUri), "inputUri cannot be null.");
+            if (string.IsNullOrWhiteSpace(matchExpression))
+                throw new ArgumentNullException(nameof(matchExpression), "matchExpression cannot be null or empty.");
+            if (string.IsNullOrWhiteSpace(keyExpression))
+                throw new ArgumentNullException(nameof(keyExpression), "keyExpression cannot be null or empty.");
+            if(string.IsNullOrWhiteSpace(selectExpression))
+                throw new ArgumentNullException(nameof(selectExpression), "selectExpression cannot be null or empty.");
+
             List<Definition> definitions;
             OrdinalResolver<XPathNavigatorIndex> resolver;
             if (!this._definitions.TryGetValue(name, out definitions))
@@ -98,6 +111,12 @@ namespace LBi.LostDoc.Templating
 
         public XPathNodeIterator Get(string name, int ordinal, object value)
         {
+            if (name == null)
+                throw new ArgumentNullException(nameof(name), "name cannot be null.");
+
+            if (ordinal < 0)
+                throw new ArgumentOutOfRangeException(nameof(ordinal), "ordinal cannot be negative.");
+
             OrdinalResolver<XPathNavigatorIndex> resolver;
             if (this._indices.TryGetValue(name, out resolver))
             {
@@ -105,16 +124,13 @@ namespace LBi.LostDoc.Templating
                 return index.Get(value);
             }
             
-            throw new KeyNotFoundException(string.Format("No index with name: '{0}'", name));
+            throw new KeyNotFoundException($"No index with name: '{name}'");
         }
 
         private Lazy<XPathNavigatorIndex> CreateFallbackEvaluator(string name)
         {
             return new Lazy<XPathNavigatorIndex>(
-                () =>
-                {
-                    throw new KeyNotFoundException(string.Format("No index with name: '{0}'", name));
-                },
+                () => throw new KeyNotFoundException($"No index with name: '{name}'"),
                 isThreadSafe: true);
         }
 

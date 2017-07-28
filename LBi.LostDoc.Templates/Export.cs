@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using System.Reflection;
-using LBi.LostDoc.Composition;
 using LBi.LostDoc.Extensibility;
-using LBi.LostDoc.Templating;
 using LBi.LostDoc.Templating.IO;
 
 namespace LBi.LostDoc.Templates

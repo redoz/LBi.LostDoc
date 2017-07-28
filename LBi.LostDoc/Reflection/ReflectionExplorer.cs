@@ -80,7 +80,7 @@ namespace LBi.LostDoc.Reflection
                     ret = null;
                     break;
                 default:
-                    throw new ArgumentException(string.Format("Cannot find parent of asset of type {0}", asset.Type));
+                    throw new ArgumentException($"Cannot find parent of asset of type {asset.Type}");
             }
 
             return ret;
@@ -141,7 +141,7 @@ namespace LBi.LostDoc.Reflection
 
                     break;
                 default:
-                    throw new ArgumentException(string.Format("Cannot find children of asset of type {0}", asset.Type));
+                    throw new ArgumentException($"Cannot find children of asset of type {asset.Type}");
             }
 
             return ret;

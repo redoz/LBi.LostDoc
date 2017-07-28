@@ -16,11 +16,9 @@
 
 using System;
 using System.Globalization;
-using System.IO;
 using System.Runtime.Caching;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using LBi.LostDoc.Templating.IO;
 
 namespace LBi.LostDoc.Templating
 {

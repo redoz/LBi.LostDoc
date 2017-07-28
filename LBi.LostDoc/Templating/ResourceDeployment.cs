@@ -35,6 +35,9 @@ namespace LBi.LostDoc.Templating
 
         public override void Execute(ITemplatingContext context, Stream outputStream)
         {
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (outputStream == null) throw new ArgumentNullException(nameof(outputStream));
+            if (!outputStream.CanWrite) throw new ArgumentException("Output stream must be writable.", nameof(outputStream));
             // copy resources to output dir
             TraceSources.TemplateSource.TraceInformation("/{2:00} Deploying resource: {0} => {1}",
                                                          this.Input.OriginalString,

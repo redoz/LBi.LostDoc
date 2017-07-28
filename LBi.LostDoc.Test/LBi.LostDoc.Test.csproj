@@ -31,12 +31,49 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj" />
-    <ProjectReference Include="..\Company.Project.Library\Company.Project.Library.csproj" />
+    <None Remove="Templating\AlternateGeneratedInput\Copy.xslt" />
+    <None Remove="Templating\AlternateGeneratedInput\template.xml" />
+    <None Remove="Templating\AlternateStaticInput\Copy.xslt" />
+    <None Remove="Templating\AlternateStaticInput\Static.xml" />
+    <None Remove="Templating\AlternateStaticInput\template.xml" />
+    <None Remove="Templating\EnrichInputDocument\Copy.xslt" />
+    <None Remove="Templating\EnrichInputDocument\Enrich.xslt" />
+    <None Remove="Templating\EnrichInputDocument\template.xml" />
+    <None Remove="Templating\MultipleVersionsOfIndex\Echo.xslt" />
+    <None Remove="Templating\MultipleVersionsOfIndex\IncludeIndex.xslt" />
+    <None Remove="Templating\MultipleVersionsOfIndex\template.xml" />
+    <None Remove="Templating\MultipleVersionsOfTempFile\Echo.xslt" />
+    <None Remove="Templating\MultipleVersionsOfTempFile\IncludeEcho.xslt" />
+    <None Remove="Templating\MultipleVersionsOfTempFile\template.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="xunit" Version="1.9.2" />
-    <PackageReference Include="xunit.extensions" Version="1.9.2" />
+    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\Echo.xslt" />
+    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\IncludeEcho.xslt" />
+    <EmbeddedResource Include="Templating\MultipleVersionsOfTempFile\template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\Echo.xslt" />
+    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\IncludeIndex.xslt" />
+    <EmbeddedResource Include="Templating\MultipleVersionsOfIndex\template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templating\EnrichInputDocument\Copy.xslt" />
+    <EmbeddedResource Include="Templating\EnrichInputDocument\Enrich.xslt" />
+    <EmbeddedResource Include="Templating\EnrichInputDocument\template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templating\AlternateStaticInput\Copy.xslt" />
+    <EmbeddedResource Include="Templating\AlternateStaticInput\Static.xml" />
+    <EmbeddedResource Include="Templating\AlternateStaticInput\template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templating\AlternateGeneratedInput\Copy.xslt" />
+    <EmbeddedResource Include="Templating\AlternateGeneratedInput\template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj" />
+    <ProjectReference Include="..\Company.Project.Library\Company.Project.Library.csproj" />
+    <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Runtime.Caching" />
@@ -49,5 +86,12 @@
     <None Include="Data\Company.Project.AnotherLibrary.dll_1.5.0.3.ldoc" />
     <None Include="Data\Company.Project.Library.dll_1.0.0.0.ldoc" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 </Project>

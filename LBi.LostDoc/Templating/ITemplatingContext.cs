@@ -14,8 +14,6 @@
  * limitations under the License. 
  */
 
-using System;
-using System.IO;
 using System.Xml.XPath;
 using LBi.LostDoc.Templating.IO;
 

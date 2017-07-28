@@ -27,7 +27,7 @@ namespace LBi.LostDoc.Diagnostics
             this._stopMessage = stopMessage;
             this._oldGuid = Trace.CorrelationManager.ActivityId;
             Guid newGuid = Guid.NewGuid();
-            this._trace.TraceTransfer(0, String.Format("Transfer to {0}", startMessage) , newGuid);
+            this._trace.TraceTransfer(0, $"Transfer to {startMessage}", newGuid);
             Trace.CorrelationManager.ActivityId = newGuid;
             this._trace.TraceEvent(TraceEventType.Start, 0, startMessage);
         }
@@ -45,7 +45,7 @@ namespace LBi.LostDoc.Diagnostics
         {
             string  msg = message ?? this._stopMessage;
             this._trace.TraceEvent(TraceEventType.Stop, 0, msg);
-            this._trace.TraceTransfer(0, string.Format("Transfer from {0}", msg), this._oldGuid);
+            this._trace.TraceTransfer(0, $"Transfer from {msg}", this._oldGuid);
             Trace.CorrelationManager.ActivityId = this._oldGuid;
         }
 
@@ -53,7 +53,7 @@ namespace LBi.LostDoc.Diagnostics
         {
             string msg = string.Format(message, args);
             this._trace.TraceEvent(TraceEventType.Stop, 0, msg);
-            this._trace.TraceTransfer(0, string.Format("Transfer from {0}", msg), this._oldGuid);
+            this._trace.TraceTransfer(0, $"Transfer from {msg}", this._oldGuid);
             Trace.CorrelationManager.ActivityId = this._oldGuid;
         }
     }

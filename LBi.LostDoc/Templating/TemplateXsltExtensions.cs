@@ -224,7 +224,7 @@ namespace LBi.LostDoc.Templating
             Assembly asm = Assembly.GetExecutingAssembly();
             AssemblyName name = asm.GetName();
             string appTitle = asm.GetCustomAttribute<AssemblyProductAttribute>().Product;
-            return string.Format("{0} {1}", appTitle, name.Version);
+            return $"{appTitle} {name.Version}";
         }
 
         // ReSharper restore InconsistentNaming

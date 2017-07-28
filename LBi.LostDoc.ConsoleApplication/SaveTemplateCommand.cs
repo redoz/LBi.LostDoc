@@ -15,13 +15,11 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Reflection;
 using LBi.Cli.Arguments;
 using LBi.LostDoc.ConsoleApplication.Extensibility;
 using LBi.LostDoc.Templating;

@@ -18,7 +18,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
-using System.IO;
 using System.Runtime.Caching;
 using System.Threading;
 using LBi.LostDoc.Templating.AssetResolvers;

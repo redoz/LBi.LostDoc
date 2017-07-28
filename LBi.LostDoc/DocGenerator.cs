@@ -242,37 +242,37 @@ namespace LBi.LostDoc
             switch (asset.Type)
             {
                 case AssetType.Namespace:
-                    newElement = parentNode.XPathSelectElement(string.Format("namespace[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"namespace[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateNamespaceElement(pctx, asset);
                     break;
                 case AssetType.Type:
-                    newElement = parentNode.XPathSelectElement(string.Format("*[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"*[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateTypeElement(pctx, asset);
                     break;
                 case AssetType.Method:
-                    newElement = parentNode.XPathSelectElement(string.Format("*[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"*[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateMethodElement(pctx, asset);
                     break;
                 case AssetType.Field:
-                    newElement = parentNode.XPathSelectElement(string.Format("field[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"field[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateFieldElement(pctx, asset);
                     break;
                 case AssetType.Event:
-                    newElement = parentNode.XPathSelectElement(string.Format("event[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"event[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateEventElement(pctx, asset);
                     break;
                 case AssetType.Property:
-                    newElement = parentNode.XPathSelectElement(string.Format("property[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"property[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GeneratePropertyElement(pctx, asset);
                     break;
                 case AssetType.Assembly:
-                    newElement = parentNode.XPathSelectElement(string.Format("assembly[@assetId = '{0}']", asset));
+                    newElement = parentNode.XPathSelectElement($"assembly[@assetId = '{asset}']");
                     if (newElement == null)
                         newElement = this.GenerateAssemblyElement(pctx, asset);
                     break;

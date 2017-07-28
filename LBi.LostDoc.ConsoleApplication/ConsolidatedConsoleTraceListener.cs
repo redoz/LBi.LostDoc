@@ -163,7 +163,7 @@ namespace LBi.LostDoc.ConsoleApplication
                     if (this._startedTasks.TryRemove(msg, out ts))
                     {
                         double seconds = (Stopwatch.GetTimestamp() - ts)/(double) Stopwatch.Frequency;
-                        msg += string.Format(" [{0:N1} seconds]", seconds);
+                        msg += $" [{seconds:N1} seconds]";
                     }
                     msg = "Finished: " + msg;
                     break;

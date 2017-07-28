@@ -88,7 +88,7 @@ namespace LBi.LostDoc.Templating
                     {
                         throw new TemplateException(new FileReference(templateInfo.Source, templateInfo.Path),
                                                     paramNode.Attribute("select"),
-                                                    string.Format("Unable to process XPath expression: '{0}'. {1}", pExpr, ex.Message),
+                                                    $"Unable to process XPath expression: '{pExpr}'. {ex.Message}",
                                                     ex);
                     }
                 }

@@ -16,7 +16,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 
 namespace LBi.LostDoc.Templating.IO
 {
@@ -32,8 +31,11 @@ namespace LBi.LostDoc.Templating.IO
 
         public void Add(string uriScheme, IFileProvider fileProvider, bool stripScheme)
         {
-            Contract.Requires<ArgumentNullException>(uriScheme != null, "uriScheme cannot be null");
-            Contract.Requires<ArgumentNullException>(fileProvider != null, "fileProvider cannot be null");
+            if (uriScheme == null)
+                throw new ArgumentNullException(nameof(uriScheme), "uriScheme cannot be null");
+
+            if (fileProvider == null)
+                throw new ArgumentNullException(nameof(fileProvider), "fileProvider cannot be null");
 
             this._providers.Add(uriScheme, Tuple.Create(fileProvider, stripScheme));
         }

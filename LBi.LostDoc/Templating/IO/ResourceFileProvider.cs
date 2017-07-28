@@ -64,11 +64,11 @@ namespace LBi.LostDoc.Templating.IO
 
             var realName = this._asm.GetManifestResourceNames().SingleOrDefault(n => StringComparer.OrdinalIgnoreCase.Equals(n, name));
             if (realName == null)
-                throw new FileNotFoundException(string.Format("Resource not found: {0} (Was: {1})", this.ConvertPath(path), path), path);
+                throw new FileNotFoundException($"Resource not found: {this.ConvertPath(path)} (Was: {path})", path);
 
             var ret = this._asm.GetManifestResourceStream(realName);
             if (ret == null)
-                throw new FileNotFoundException(string.Format("Resource not found: {0} (Was: {1})", this.ConvertPath(path), path), path);
+                throw new FileNotFoundException($"Resource not found: {this.ConvertPath(path)} (Was: {path})", path);
             return ret;
         }
 
@@ -118,7 +118,7 @@ namespace LBi.LostDoc.Templating.IO
 
         public override string ToString()
         {
-            return string.Format("[{0}]{1}", this._asm.GetName().Name, this._ns);
+            return $"[{this._asm.GetName().Name}]{this._ns}";
         }
     }
 }

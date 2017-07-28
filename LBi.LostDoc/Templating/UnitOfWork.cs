@@ -15,19 +15,19 @@
  */
 
 using System;
-using System.Diagnostics.Contracts;
 using System.IO;
 
 namespace LBi.LostDoc.Templating
-{
-    [ContractClass(typeof(UnitOfWorkContract))]
+{ 
     public abstract class UnitOfWork
     {
         protected UnitOfWork(Uri output, int ordinal)
         {
-            Contract.Requires<ArgumentNullException>(output != null);
-            Contract.Requires<ArgumentNullException>(output.IsAbsoluteUri);
-            Contract.Requires<ArgumentNullException>(ordinal >= 0);
+            if (output == null)
+                throw new ArgumentNullException(nameof(output));
+            if (!output.IsAbsoluteUri)
+                throw new ArgumentException("Output Uri must be absolute.", nameof(output));
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal));
 
             this.Output = output;
             this.Ordinal = ordinal;
@@ -37,20 +37,5 @@ namespace LBi.LostDoc.Templating
         public Uri Output { get; protected set; }
 
         public abstract void Execute(ITemplatingContext context, Stream outputStream);
-    }
-
-    [ContractClassFor(typeof(UnitOfWork))]
-    internal abstract class UnitOfWorkContract : UnitOfWork
-    {
-        protected UnitOfWorkContract(Uri output, int ordinal) : base(output, ordinal)
-        {
-        }
-
-        public override void Execute(ITemplatingContext context, Stream outputStream)
-        {
-            Contract.Requires<ArgumentNullException>(context != null);
-            Contract.Requires<ArgumentNullException>(outputStream != null);
-            Contract.Requires<ArgumentException>(outputStream.CanWrite, "outputStream must be writeable");
-        }
     }
 }

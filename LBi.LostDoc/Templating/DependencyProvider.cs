@@ -100,7 +100,7 @@ namespace LBi.LostDoc.Templating
             FileReference fileRef = this._storageResolver.Resolve(uri);
 
             if (!fileRef.Exists)
-                throw new FileNotFoundException(string.Format("File not found: {0} ({1})", uri, fileRef.Path),
+                throw new FileNotFoundException($"File not found: {uri} ({fileRef.Path})",
                                                 fileRef.Path);
 
             return fileRef;

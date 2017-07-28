@@ -14,17 +14,13 @@
  * limitations under the License. 
  */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
-using System.IO;
 using System.Linq;
 using System.Runtime.Caching;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using LBi.LostDoc.Templating.IO;
-using LBi.LostDoc.Templating.XPath;
 
 namespace LBi.LostDoc.Templating
 {

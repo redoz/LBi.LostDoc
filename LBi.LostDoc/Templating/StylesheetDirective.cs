@@ -16,7 +16,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,7 +30,7 @@ namespace LBi.LostDoc.Templating
     {
         public StylesheetDirective(int ordinal)
         {
-            Contract.Requires<ArgumentOutOfRangeException>(ordinal >= 0);
+            if (ordinal < 0) throw new ArgumentOutOfRangeException(nameof(ordinal));
 
             this.Ordinal = ordinal;
         }
