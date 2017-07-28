@@ -71,9 +71,9 @@
     <EmbeddedResource Include="Templating\AlternateGeneratedInput\template.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\LBi.LostDoc\LBi.LostDoc.csproj" />
     <ProjectReference Include="..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj" />
     <ProjectReference Include="..\Company.Project.Library\Company.Project.Library.csproj" />
-    <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Runtime.Caching" />

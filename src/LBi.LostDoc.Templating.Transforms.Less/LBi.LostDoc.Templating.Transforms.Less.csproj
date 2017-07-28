@@ -39,7 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="dotless.Core">
-      <HintPath>..\3rdParty\dotless\dotless.Core.dll</HintPath>
+      <HintPath>..\..\lib\dotless\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.DataSetExtensions" />

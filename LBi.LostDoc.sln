@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.ConsoleApplication", "LBi.LostDoc.ConsoleApplication\LBi.LostDoc.ConsoleApplication.csproj", "{9AA8D187-75E5-4472-81BA-5BE5CFCCECC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.ConsoleApplication", "src\LBi.LostDoc.ConsoleApplication\LBi.LostDoc.ConsoleApplication.csproj", "{9AA8D187-75E5-4472-81BA-5BE5CFCCECC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc", "LBi.LostDoc\LBi.LostDoc.csproj", "{B411734E-B768-422F-BA1C-5B9AEEF97C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc", "src\LBi.LostDoc\LBi.LostDoc.csproj", "{B411734E-B768-422F-BA1C-5B9AEEF97C52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0FC44D72-B7A8-4E66-AF4A-CDD177EF5E7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.Library", "Company.Project.Library\Company.Project.Library.csproj", "{B36E13C7-AD0C-4AC8-B687-88F08A4932C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.Library", "test\Company.Project.Library\Company.Project.Library.csproj", "{B36E13C7-AD0C-4AC8-B687-88F08A4932C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.Service", "Company.Project.Service\Company.Project.Service.csproj", "{709535B2-25C0-4718-AD1D-459D9E272F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.Service", "test\Company.Project.Service\Company.Project.Service.csproj", "{709535B2-25C0-4718-AD1D-459D9E272F2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Test", "LBi.LostDoc.Test\LBi.LostDoc.Test.csproj", "{ABDE3820-BCFF-4394-AC42-8A1305FB668F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Test", "test\LBi.LostDoc.Test\LBi.LostDoc.Test.csproj", "{ABDE3820-BCFF-4394-AC42-8A1305FB668F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.AnotherLibrary", "Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj", "{927BD07E-35D1-4C12-AAAA-BE5216627FBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Project.AnotherLibrary", "test\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj", "{927BD07E-35D1-4C12-AAAA-BE5216627FBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templating.Transforms.Less", "LBi.LostDoc.Templating.Transforms.Less\LBi.LostDoc.Templating.Transforms.Less.csproj", "{D61CB417-8623-4D7E-B458-B7D1409F7F3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templating.Transforms.Less", "src\LBi.LostDoc.Templating.Transforms.Less\LBi.LostDoc.Templating.Transforms.Less.csproj", "{D61CB417-8623-4D7E-B458-B7D1409F7F3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.ConsoleApplication.Extensibility", "LBi.LostDoc.ConsoleApplication.Extensibility\LBi.LostDoc.ConsoleApplication.Extensibility.csproj", "{937A6F0F-EFDC-4689-A88D-30954A92C027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.ConsoleApplication.Extensibility", "src\LBi.LostDoc.ConsoleApplication.Extensibility\LBi.LostDoc.ConsoleApplication.Extensibility.csproj", "{937A6F0F-EFDC-4689-A88D-30954A92C027}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templates", "LBi.LostDoc.Templates\LBi.LostDoc.Templates.csproj", "{357E5BA0-0AA0-4C30-B7BB-EEC8EAAA6D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templates", "src\LBi.LostDoc.Templates\LBi.LostDoc.Templates.csproj", "{357E5BA0-0AA0-4C30-B7BB-EEC8EAAA6D17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AddIns", "AddIns", "{C40537E5-05FE-4622-B983-8FA9DFBA85EE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templates.Markdown", "LBi.LostDoc.Templates.Markdown\LBi.LostDoc.Templates.Markdown.csproj", "{A6CDE3FA-6D7F-4286-8F58-7E305C8FA8BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBi.LostDoc.Templates.Markdown", "src\LBi.LostDoc.Templates.Markdown\LBi.LostDoc.Templates.Markdown.csproj", "{A6CDE3FA-6D7F-4286-8F58-7E305C8FA8BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9759A4E9-3804-4767-93B5-2EE05B402BD8}"
 EndProject
