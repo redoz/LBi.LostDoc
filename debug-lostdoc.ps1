@@ -5,30 +5,22 @@
 [string]$script:verbose = "";
 $choices = @(
     (New-Object -TypeName PSObject @{
-                                        C = "Extract System.Web.*.dll from Web.Host bin folder"; 
-                                        A = @((Get-ChildItem -Path ..\..\..\LBi.LostDoc.Repository.Web.Host\bin\System.Web.*.dll).FullName | %{ "Extract -IncludeBclDocComments -Path {0} -Output .\tmp\" -f $_ })
-                                    }),
-    (New-Object -TypeName PSObject @{
-                                        C = "Extract *.dll from Web.Host bin folder"; 
-                                        A = @((Get-ChildItem -Path ..\..\..\LBi.LostDoc.Repository.Web.Host\bin\*.dll).FullName | %{ "Extract -IncludeBclDocComments -Path {0} -Output .\tmp\" -f $_ })
-                                    }),
-    (New-Object -TypeName PSObject @{
                                         C = "Extract Company.Project.Library"; 
-                                        A = @("Extract -IncludeBclDocComments -Path ..\..\..\Company.Project.Library\bin\Debug\Company.Project.Library.dll -Output .\tmp\")
+                                        A = @("Extract -IncludeBclDocComments -Path ..\..\test\Company.Project.Library\bin\Debug\net462\Company.Project.Library.dll -Output .\tmp\")
                                     }),
     (New-Object -TypeName PSObject @{
                                         C = "Extract Company.Project.AnotherLibrary";
-                                        A = @("Extract -IncludeBclDocComments -Path ..\..\..\Company.Project.AnotherLibrary\bin\Debug\Company.Project.AnotherLibrary.dll -Output .\tmp\")
+                                        A = @("Extract -IncludeBclDocComments -Path ..\..\test\Company.Project.AnotherLibrary\bin\Debug\net462\Company.Project.AnotherLibrary.dll -Output .\tmp\")
                                     }),
     (New-Object -TypeName PSObject @{
                                         C = "Extract All"; 
-                                        A = @("Extract -IncludeBclDocComments -Path ..\..\..\Company.Project.AnotherLibrary\bin\Debug\Company.Project.AnotherLibrary.dll  -Output .\tmp\", 
-                                              "Extract -IncludeBclDocComments -Path ..\..\..\Company.Project.Library\bin\Debug\Company.Project.Library.dll  -Output .\tmp\")
+                                        A = @("Extract -IncludeBclDocComments -Path ..\..\test\Company.Project.AnotherLibrary\bin\Debug\net462\Company.Project.AnotherLibrary.dll  -Output .\tmp\", 
+                                              "Extract -IncludeBclDocComments -Path ..\..\test\Company.Project.Library\bin\Debug\net462\Company.Project.Library.dll  -Output .\tmp\")
                                     }),
     (New-Object -TypeName PSObject @{
                                         C = "Extract with multiple versions"; 
                                         A = @(
-                                                { ..\..\..\build-test-dlls.ps1 },
+                                                { ..\..\build-test-dlls.ps1 },
                                                 "Extract -IncludeBclDocComments -Path .\tmp\v1\Company.Project.AnotherLibrary.dll  -Output .\tmp\", 
                                                 "Extract -IncludeBclDocComments -Path .\tmp\v1\Company.Project.Library.dll  -Output .\tmp\", 
                                                 "Extract -IncludeBclDocComments -Path .\tmp\v2\Company.Project.AnotherLibrary.dll  -Output .\tmp\", 

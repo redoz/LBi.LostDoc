@@ -28,12 +28,10 @@ namespace LBi.LostDoc.Test
         public void ParseSimple_ConversionOperator()
         {
             AssetIdentifier aid =
-                AssetIdentifier.Parse(
-                                      "M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64");
+                AssetIdentifier.Parse("M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64");
 
             Assert.False(aid.HasVersion);
-            Assert.Equal(
-                         "M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64",
+            Assert.Equal("M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64",
                          aid.AssetId);
         }
 
@@ -41,12 +39,10 @@ namespace LBi.LostDoc.Test
         public void ParseComplex_ConversionOperator()
         {
             AssetIdentifier aid =
-                AssetIdentifier.Parse(
-                                      "{M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64, V:1.0.0.0}");
+                AssetIdentifier.Parse("{M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64, V:1.0.0.0}");
 
             Assert.True(aid.HasVersion);
-            Assert.Equal(
-                         "M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64",
+            Assert.Equal("M:Company.Project.Library.RegularClass.op_Explicit(Company.Project.Library.RegularClass)~System.Int64",
                          aid.AssetId);
         }
 
@@ -265,8 +261,7 @@ namespace LBi.LostDoc.Test
         public void Parse_With_Specific_Type()
         {
             AssetIdentifier aid =
-                AssetIdentifier.Parse(
-                                      "{M:LBi.Testing.Data.RowSet.GetChangeSet(LBi.Testing.Data.RowSet,System.Collections.Generic.IEnumerable{System.String}), V:1.0.0.14}");
+                AssetIdentifier.Parse("{M:LBi.Testing.Data.RowSet.GetChangeSet(LBi.Testing.Data.RowSet,System.Collections.Generic.IEnumerable{System.String}), V:1.0.0.14}");
         }
     }
 }

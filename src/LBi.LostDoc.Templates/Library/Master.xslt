@@ -137,7 +137,7 @@
           <xsl:with-param name="overload" select="true()" />
         </xsl:apply-templates>
 
-        <xsl:apply-templates select="following-sibling::method/@name = @name" />
+        <!--<xsl:apply-templates select="following-sibling::method/@name = @name" />-->
       </node>
     </xsl:if>
   </xsl:template>

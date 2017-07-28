@@ -29,6 +29,76 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Library\Assembly.xslt" />
+    <None Remove="Library\Common.xslt" />
+    <None Remove="Library\DocComments.xslt" />
+    <None Remove="Library\EnrichNaming.xslt" />
+    <None Remove="Library\GlobalParameter.xslt" />
+    <None Remove="Library\images\lostdoc.svg" />
+    <None Remove="Library\js\lib\zepto.js" />
+    <None Remove="Library\js\lostdoc.js" />
+    <None Remove="Library\js\lostdoc.layout.js" />
+    <None Remove="Library\js\lostdoc.settings.js" />
+    <None Remove="Library\Layout.xslt" />
+    <None Remove="Library\LayoutExtensions.xslt" />
+    <None Remove="Library\less\colors.less" />
+    <None Remove="Library\less\icons.less" />
+    <None Remove="Library\less\layout.less" />
+    <None Remove="Library\less\navigation.less" />
+    <None Remove="Library\less\style.less" />
+    <None Remove="Library\less\syntax.less" />
+    <None Remove="Library\Library.xslt" />
+    <None Remove="Library\Master.xslt" />
+    <None Remove="Library\Member.xslt" />
+    <None Remove="Library\Namespace.xslt" />
+    <None Remove="Library\Naming.xslt" />
+    <None Remove="Library\Navigation2.xslt" />
+    <None Remove="Library\Overloads.xslt" />
+    <None Remove="Library\Syntax-csharp.xslt" />
+    <None Remove="Library\Syntax.xslt" />
+    <None Remove="Library\template.xml" />
+    <None Remove="Library\Type.xslt" />
+    <None Remove="Library\_Master.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Library\images\lostdoc.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Library\js\lib\zepto.js" />
+    <EmbeddedResource Include="Library\js\lostdoc.js" />
+    <EmbeddedResource Include="Library\js\lostdoc.layout.js" />
+    <EmbeddedResource Include="Library\js\lostdoc.settings.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Library\less\colors.less" />
+    <EmbeddedResource Include="Library\less\icons.less" />
+    <EmbeddedResource Include="Library\less\layout.less" />
+    <EmbeddedResource Include="Library\less\navigation.less" />
+    <EmbeddedResource Include="Library\less\style.less" />
+    <EmbeddedResource Include="Library\less\syntax.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Library\Assembly.xslt" />
+    <EmbeddedResource Include="Library\Common.xslt" />
+    <EmbeddedResource Include="Library\DocComments.xslt" />
+    <EmbeddedResource Include="Library\EnrichNaming.xslt" />
+    <EmbeddedResource Include="Library\GlobalParameter.xslt" />
+    <EmbeddedResource Include="Library\Layout.xslt" />
+    <EmbeddedResource Include="Library\LayoutExtensions.xslt" />
+    <EmbeddedResource Include="Library\Library.xslt" />
+    <EmbeddedResource Include="Library\Master.xslt" />
+    <EmbeddedResource Include="Library\Member.xslt" />
+    <EmbeddedResource Include="Library\Namespace.xslt" />
+    <EmbeddedResource Include="Library\Naming.xslt" />
+    <EmbeddedResource Include="Library\Navigation2.xslt" />
+    <EmbeddedResource Include="Library\Overloads.xslt" />
+    <EmbeddedResource Include="Library\Syntax-csharp.xslt" />
+    <EmbeddedResource Include="Library\Syntax.xslt" />
+    <EmbeddedResource Include="Library\template.xml" />
+    <EmbeddedResource Include="Library\Type.xslt" />
+    <EmbeddedResource Include="Library\_Master.xslt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\LBi.LostDoc\LBi.LostDoc.csproj" />
   </ItemGroup>
   <ItemGroup>

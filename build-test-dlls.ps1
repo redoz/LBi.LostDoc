@@ -1,7 +1,7 @@
 ﻿
-$p1 = Join-Path -Path (Get-Location).Path -ChildPath "..\..\..\Company.Project.Library\Properties\AssemblyInfo.cs" -Resolve
-$p2 = Join-Path -Path (Get-Location).Path -ChildPath "..\..\..\Company.Project.AnotherLibrary\Properties\AssemblyInfo.cs" -Resolve
-$out = Join-Path -Path (Get-Location).Path -ChildPath "..\..\..\Company.Project.AnotherLibrary\bin\debug\" -Resolve
+$p1 = Join-Path -Path (Get-Location).Path -ChildPath "..\..\test\Company.Project.Library\Properties\AssemblyInfo.cs" -Resolve
+$p2 = Join-Path -Path (Get-Location).Path -ChildPath "..\..\test\Company.Project.AnotherLibrary\Properties\AssemblyInfo.cs" -Resolve
+$out = Join-Path -Path (Get-Location).Path -ChildPath "..\..\test\Company.Project.AnotherLibrary\bin\debug\net462" -Resolve
 $t1 = Join-Path -Path (Get-Location).Path -ChildPath "tmp\v1\"
 $t2 = Join-Path -Path (Get-Location).Path -ChildPath "tmp\v2\"
 
@@ -28,7 +28,7 @@ $asmInfo = ($asmInfo -replace "Version\(`"[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+`"\)","V
 
 [System.IO.File]::WriteAllText($p2, $asmInfo, [System.Text.Encoding]::UTF8);
 
-& C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe ..\..\..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj /t:Rebuild
+& "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\amd64\MSBuild.exe" ..\..\test\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj /t:Rebuild
 
 Copy-Item -Path $out -Destination $t1 -Recurse -Force -Container
 
@@ -44,6 +44,6 @@ $asmInfo = $asmInfo -replace "Version\(`"[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+`"\)","Ve
 
 [System.IO.File]::WriteAllText($p2, $asmInfo, [System.Text.Encoding]::UTF8);
 
-& C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe ..\..\..\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj /t:Rebuild
+& C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe ..\..\test\Company.Project.AnotherLibrary\Company.Project.AnotherLibrary.csproj /t:Rebuild
 
 Copy-Item -Path $out -Destination $t2 -Recurse  -Force -Container
